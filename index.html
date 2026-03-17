@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Amazon.es | Feiss - CROSSAIM | Afiliado feisks1-21</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --amazon-orange: #ff9900;
+            --amazon-dark: #131921;
+            --crossaim-red: #ff2a2a;
+            --discord-purple: #5865F2;
+            --instagram-pink: #E1306C;
+        }
+        
+        body {
+            font-family: 'Rajdhani', 'Segoe UI', system-ui, sans-serif;
+            background: var(--amazon-dark);
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        /* Top Banner */
+        .top-banner {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, var(--amazon-orange), #ff6600);
+            padding: 0.8rem;
+            text-align: center;
+            z-index: 10000;
+            font-weight: 700;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .amazon-es-logo {
+            background: #fff;
+            color: #000;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 3rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(255,153,0,0.15) 0%, transparent 70%);
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .hero p {
+            color: #888;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .affiliate-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,153,0,0.1);
+            border: 2px solid var(--amazon-orange);
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .affiliate-badge code {
+            color: var(--amazon-orange);
+            font-weight: 900;
+            font-family: monospace;
+        }
+        
+        .es-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: #aa151b;
+            color: #f1bf00;
+            padding: 0.4rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-top: 0.5rem;
+        }
+        
+        /* Social Links */
+        .hero-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .social-btn.discord { background: var(--discord-purple); color: #fff; }
+        .social-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+        
+        .social-btn:hover { transform: scale(1.05); }
+        
+        /* Products Section */
+        .products {
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--amazon-orange);
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-header p {
+            color: #888;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,153,0,0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--amazon-orange);
+            box-shadow: 0 20px 40px rgba(255,153,0,0.15);
+        }
+        
+        .product-card.featured {
+            border-color: var(--crossaim-red);
+            box-shadow: 0 0 30px rgba(255,42,42,0.1);
+        }
+        
+        .product-card.featured::before {
+            content: 'TOP VENTAS';
+            position: absolute;
+            top: 1rem;
+            right: -2.5rem;
+            background: var(--crossaim-red);
+            color: #fff;
+            padding: 0.3rem 3rem;
+            font-size: 0.7rem;
+            font-weight: 900;
+            transform: rotate(45deg);
+            z-index: 10;
+        }
+        
+        .product-image {
+            height: 220px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            position: relative;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .amazon-es-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: #fff;
+            color: #000;
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            border: 2px solid var(--amazon-orange);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-category {
+            color: var(--amazon-orange);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        
+        .product-rating {
+            color: var(--amazon-orange);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-specs {
+            color: #888;
+            font-size: 0.85rem;
+            font-family: monospace;
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .current-price {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #666;
+        }
+        
+        .discount {
+            background: var(--crossaim-red);
+            padding: 0.2rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .amazon-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--amazon-orange), #ff6600);
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        
+        .amazon-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(255,153,0,0.4);
+        }
+        
+        .amazon-btn small {
+            display: block;
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 2rem;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-social a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.8rem;
+            transition: all 0.3s;
+        }
+        
+        .footer-social a.discord { background: var(--discord-purple); color: #fff; }
+        .footer-social a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+        .footer-social a:hover { transform: translateY(-5px) scale(1.1); }
+        
+        .footer-info {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-info strong {
+            color: var(--amazon-orange);
+        }
+        
+        .amazon-es-footer {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #fff;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 900;
+            margin-top: 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .hero-social { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <span class="amazon-es-logo">amazon.es</span>
+        <span>Tienda oficial | Afiliado: feisks1-21</span>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Mi Setup Amazon.es</h1>
+        <p>Productos verificados para gaming competitivo. Todos los enlaces son de Amazon España con mi afiliado.</p>
+        
+        <div class="affiliate-badge">
+            <span>ID Afiliado:</span>
+            <code>feisks1-21</code>
+        </div>
+        
+        <span class="es-badge">🇪🇸 AMAZON.ES</span>
+        
+        <div class="hero-social">
+            <a href="https://discord.gg/rWVagGwmWJ" target="_blank" class="social-btn discord">
+                💬 Discord
+            </a>
+            <a href="https://www.instagram.com/feispla/" target="_blank" class="social-btn instagram">
+                📸 Instagram
+            </a>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+        <div class="section-header">
+            <h2>Productos en Amazon.es</h2>
+            <p>8 productos esenciales disponibles en Amazon España</p>
+        </div>
+        
+        <div class="products-grid">
+            
+            <!-- Producto 1: Logitech G Pro X Superlight -->
+            <div class="product-card featured">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61yxfXTqm7L._AC_SL1500_.jpg" alt="Logitech G Pro X Superlight">
+                    <span class="amazon-es-badge">amazon.es</span>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Mouse Gaming #1 Best Seller</div>
+                    <div class="product-name">Logitech G Pro X Superlight</div>
+                    <div class="product-rating">★★★★★ 4.7 (28,432 reseñas)</div>
+                    <div class="product-specs">63g | Hero 25K | Wireless | 70h</div>
+                    <div class="product-price">
+                        <span class="current-price">127,99 €</span>
+                        <span class="original-price">159,99 €</span>
+                        <span class="discount">-20%</span>
+                    </div>
+                    <a href="https://amzn.eu/d/0bzFFKQC" target="_blank" class="amazon-btn">
+                        Comprar en Amazon.es
+                        <small>Enlace afiliado: feisks1-21 | Envío Prime</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 2: Razer DeathAdder V3 Pro -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71AqY6BPHFL._AC_SL1500_.jpg" alt="Razer DeathAdder V3 Pro">
+                    <span class="amazon-es-badge">amazon.es</span>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Mouse Alternativo Pro</div>
+                    <div class="product-name">Razer DeathAdder V3 Pro</div>
+                    <div class="product-rating">★★★★★ 4.6 (12,847 reseñas)</div>
+                    <div class="product-specs">63g | Focus Pro 30K | 90h</div>
+                    <div class="product-price">
+                        <span class="current-price">143,99 €</span>
+                        <span class="original-price">159,99 €</span>
+                        <span class="discount">-10%</span>
+                    </div>
+                    <a href="https://amzn.eu/d/0c21M5um" target="_blank" class="amazon-btn">
+                        Comprar en Amazon.es
+                        <small>Enlace afiliado: feisks1-21 | Envío Prime</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 3: SteelSeries QcK Heavy XXL -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71S-p+0S9zL._AC_SL1500_.jpg" alt="SteelSeries QcK Heavy XXL">
+                    <span class="amazon-es-badge">amazon.es</span>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Mousepad Gaming</div>
+                    <div class="product-name">SteelSeries QcK Heavy XXL</div>
+                    <div class="product-rating">★★★★★ 4.8 (45,231 reseñas)</div>
+                    <div class="product-specs">900x400x6mm | Control | Antideslizante</div>
+                    <div class="product-price">
+                        <span class="current-price">19,99 €</span>
+                        <span class="original-price">29,99 €</span>
+                        <span class="discount">-33%</span>
+                    </div>
+                    <a href="https://amzn.eu/d/0d5EnHu8" target="_blank" class="amazon-btn">
+                        Comprar en Amazon.es
+                        <small>Enlace afiliado: feisks1-21 | Envío Prime</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 4: BenQ Zowie XL2546K -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61Y5N6r8oFL._AC_SL1000_.jpg" alt="BenQ Zowie XL2546K">
+                    <span class="amazon-es-badge">amazon.es</span>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Monitor Esports 240Hz</div>
+                    <div class="product-name">BenQ Zowie XL2546K 24.5"</div>
+                    <div class="product-rating">★★★★★ 4.7 (3,421 reseñas)</div>
+                    <div class="product-specs">240Hz | 0.5ms | DyAc+ | TN</div>
+                    <div class="product-price">
+                        <span class="current-price">429,00 €</span>
+                        <span class="original-price">499,00 €</span>
+                        <span class="discount">-14%</span>
+                    </div>
+                    <a href="https://amzn.eu/d/01y98PwN" target="_blank" class="amazon-btn">
+                        Comprar en Amazon.es
+                        <small>Enlace afiliado: feisks1-21 | Envío Prime</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 5: HyperX Cloud II Wireless -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71pz2njkHBL._AC_SL1500_.jpg" alt="HyperX Cloud II Wireless">
+                    <span class="amazon-es-badge">amazon.es</span>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Auriculares Gaming</div>
+                    <div class="product-name">HyperX Cloud II Wireless</div>
+                    <div class="product-rating">★★★★★ 4.5 (89,432 reseñas)</div>
+                    <div class="product-specs">Wireless | 7.1 | 30h | PC/PS</div>
+                    <div class="product-price">
+                        <span class="current-price">111,99 €</span>
+                        <span class="original-price">149,99 €</span>
+                        <span class="discount">-25%</span>
+                    </div>
+                    <a href="https://amzn.eu/d/02AjYssJ" target="_blank" class="amazon-btn">
+                        Comprar en Amazon.es
+                        <small>Enlace afiliado: feisks1-21 | Envío Prime</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 6: FIFINE XLR USB -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71L-2JNdeZL._AC_SL1500_.jpg" alt="FIFINE XLR USB">
+                    <span class="amazon-es-badge">amazon.es</span>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Micrófono Streaming</div>
+                    <div class="product-name">FIFINE XLR USB</div>
+                    <div class="product-rating">★★★★★ 4.6 (8,234 reseñas)</div>
+                    <div class="product-specs">XLR/USB | Dinámico | Podcast</div>
+                    <div class="product-price">
+                        <span class="current-price">79,99 €</span>
+                        <span class="original-price">99,99 €</span>
+                        <span class="discount">-20%</span>
+                    </div>
+                    <a href="https://amzn.eu/d/01c38KHS" target="_blank" class="amazon-btn">
+                        Comprar en Amazon.es
+                        <small>Enlace afiliado: feisks1-21 | Envío Prime</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 7: CORSAIR K70 PRO TKL -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71U3+mPGm7L._AC_SL1500_.jpg" alt="CORSAIR K70 PRO TKL">
+                    <span class="amazon-es-badge">amazon.es</span>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Teclado Mecánico RGB</div>
+                    <div class="product-name">CORSAIR K70 PRO TKL RGB</div>
+                    <div class="product-rating">★★★★★ 4.7 (11,432 reseñas)</div>
+                    <div class="product-specs">TKL | OPX Optical | 8KHz | RGB</div>
+                    <div class="product-price">
+                        <span class="current-price">129,99 €</span>
+                        <span class="original-price">169,99 €</span>
+                        <span class="discount">-24%</span>
+                    </div>
+                    <a href="https://amzn.eu/d/04jOwQ85" target="_blank" class="amazon-btn">
+                        Comprar en Amazon.es
+                        <small>Enlace afiliado: feisks1-21 | Envío Prime</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Producto 8: Elgato Stream Deck MK.2 White -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/710R9YadVXL._AC_SL1500_.jpg" alt="Elgato Stream Deck MK.2 White">
+                    <span class="amazon-es-badge">amazon.es</span>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Control Streaming</div>
+                    <div class="product-name">Elgato Stream Deck MK.2 White</div>
+                    <div class="product-rating">★★★★★ 4.8 (22,567 reseñas)</div>
+                    <div class="product-specs">15 LCD Keys | USB-C | Blanco</div>
+                    <div class="product-price">
+                        <span class="current-price">127,49 €</span>
+                        <span class="original-price">149,99 €</span>
+                        <span class="discount">-15%</span>
+                    </div>
+                    <a href="https://amzn.eu/d/03XiPZmI" target="_blank" class="amazon-btn">
+                        Comprar en Amazon.es
+                        <small>Enlace afiliado: feisks1-21 | Envío Prime</small>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-social">
+            <a href="https://discord.gg/rWVagGwmWJ" target="_blank" class="discord" title="Discord">💬</a>
+            <a href="https://www.instagram.com/feispla/" target="_blank" class="instagram" title="Instagram">📸</a>
+        </div>
+        
+        <div class="footer-info">
+            <p><strong>CROSSAIM ESPORTS</strong> | Setup Profesional para Valorant</p>
+            <p>Afiliado: <strong>feisks1-21</strong></p>
+            <div class="amazon-es-footer">
+                <span>amazon.es</span>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: #888;">
+                Todos los enlaces dirigen a Amazon España<br>
+                Envío Prime disponible en toda la península
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
